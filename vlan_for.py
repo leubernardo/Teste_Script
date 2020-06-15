@@ -3,12 +3,12 @@ import telnetlib
 import getpass
 import sys
 
-HOST = "10.10.100.2" #IP do seu device (switch e/ou roteador)
+HOST = "IP" #IP do seu device (switch e/ou roteador)
 user = input("Usuário: ")
 password = getpass.getpass() #get password with hide mode
 
 
-tn = telnetlib.Telnet(HOST)
+tn = telnetlib.Telnet(HOST) #acessando via telnet a variavel HOST
 
 tn.read_until(b"Username: ")
 tn.write(user.encode('ascii') + b"\n")
